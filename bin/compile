@@ -14,5 +14,5 @@ if [ ! -s $1/main.lua ]; then
   exit 1
 else
   echo "Downloading turbo.lua self-contained pack" | indent
-  curl https://raw.github.com/enotodden/turbo-virtual-env/master/turbo-virtual-env | bash -s - --create $1/env
+ curl -L -s -o $1/turbolua.tar.bz2 https://www.dropbox.com/s/zy2vb5lqzkfkoch/turbolua.tar.bz2
 fi | indent
