@@ -14,5 +14,6 @@ if [ ! -s $1/main.lua ]; then
   exit 1
 else
   echo "Downloading turbo.lua self-contained pack" | indent
+  PATH=$PATH:/sbin
   curl https://raw.github.com/enotodden/turbo-virtual-env/master/turbo-virtual-env | bash -s - --create $1/env
 fi | indent
