@@ -6,9 +6,6 @@ indent() {
 
 echo "-----> Found a main.lua"
 
-# if hello.txt has contents, display them (indented to align)
-# otherwise error
-
 if [ ! -s $1/main.lua ]; then
   echo "main.lua was empty"
   exit 1
