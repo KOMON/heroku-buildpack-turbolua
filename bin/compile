@@ -23,6 +23,6 @@ else
   git clone https://github.com/kernelsauce/turbo.git
   make -C ./turbo install PREFIX=./
   cd turbo
-  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/turbo\/libtffi_wrap.so/g' turbo/httputil.lua
-  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/turbo\/libtffi_wrap.so/g' turbo/iostream.lua
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/httputil.lua
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/iostream.lua
 fi | indent
