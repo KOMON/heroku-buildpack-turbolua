@@ -16,6 +16,13 @@ else
   echo "Downloading turbo.lua self-contained pack" | indent
   PATH=$PATH:/sbin
   curl https://raw.github.com/enotodden/turbo-virtual-env/master/turbo-virtual-env | bash -s - --create $1/env
-  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/turbo\/libtffi_wrap.so/g' $1/turbo/httputil.lua
-  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/turbo\/libtffi_wrap.so/g' $1/turbo/iostream.lua
+  cd $1/env/src/luarocks
+  ./configure --with-lua=../src/luajit-2.0/src/luajit --with-lua-include=../luajit-2.0/src
+  make build
+  cd ..
+  git clone https://github.com/kernelsauce/turbo.git
+  make -C ./turbo install PREFIX=./
+  cd turbo
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/turbo\/libtffi_wrap.so/g' turbo/httputil.lua
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/turbo\/libtffi_wrap.so/g' turbo/iostream.lua
 fi | indent
