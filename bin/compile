@@ -22,4 +22,7 @@ else
   cd turbo
   sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/httputil.lua
   sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/iostream.lua
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/crypto.lua
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/escape.lua
+  sed -i 's/\/usr\/local\/lib\/libtffi_wrap.so/\/app\/env\/src\/turbo\/libtffi_wrap.so/g' turbo/websocket.lua
 fi | indent
